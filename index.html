@@ -1,1 +1,378 @@
-<h1>Hello! This is Queen Layla's Portfolio Site.</h1>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layla Tang | AI Data Strategy Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { background-color: #FFFFFF; color: #1A1A1A; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .section { min-height: 100vh; padding: 100px 10vw; }
+        .glass-card { background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-radius: 20px; transition: all 0.4s ease; }
+        .glass-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+        .skill-tag { 
+            background: #FFFFFF; 
+            border: 1px solid #F3F4F6; 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 18px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            position: relative;
+            cursor: default;
+        }
+        .skill-tag:hover { 
+            transform: translateY(-5px) scale(1.1); 
+            border-color: #007AFF; 
+            box-shadow: 0 10px 25px rgba(0,122,255,0.1); 
+        }
+        .skill-tag img { 
+            height: 40px; 
+            width: 40px; 
+            object-fit: contain; 
+        }
+        .highlight-tag { 
+            background: #F8F9FA; 
+            border: 1px solid #EEE; 
+            padding: 6px 14px; 
+            border-radius: 50px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            color: #666; 
+            display: inline-block;
+        }
+        .skill-text-card {
+            font-size: 11px;
+            font-weight: 800;
+            color: #1A1A1A;
+            text-align: center;
+            padding: 4px;
+            line-height: 1.2;
+        }
+        /* Tooltip style */
+        .skill-tag::after {
+            content: attr(data-name);
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1A1A1A;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        /* Tooltip Arrow */
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px 6px 0 6px;
+            border-style: solid;
+            border-color: #1A1A1A transparent transparent transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 50;
+        }
+        .skill-tag:hover::after {
+            opacity: 1;
+            visibility: visible;
+            top: -52px;
+        }
+        .skill-tag:hover::before {
+            opacity: 1;
+            visibility: visible;
+            top: -14px;
+        }
+        .accent-text { color: #007AFF; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #007AFF; transition: 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full p-6 bg-white/90 backdrop-blur-md z-50 flex justify-between items-center px-[10vw] border-b border-gray-100">
+        <div class="font-black tracking-tighter text-2xl">LAYLA TANG</div>
+        <div class="hidden md:flex space-x-10 text-xs font-bold tracking-widest uppercase opacity-60">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+        </div>
+    </nav>
+
+    <section id="about" class="section flex flex-col justify-center">
+        <div class="reveal">
+            <h1 class="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-10">Hello!  I'm <br><span class="accent-text">Layla Tang</span></h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-500 leading-relaxed">
+                        具備近 7 年大型跨國零售品牌通路營運管理經驗。<br>
+                        致力於將複雜數據轉譯為具體行動方案，驅動企業營收成長與優化成本的戰略分析橋樑。
+                    </p>
+                        <p class="text-lg text-gray-500 leading-relaxed"></p>
+                        <span class="font-bold text-black underline decoration-blue-500">我相信，最好的決策不再只是有冰冷的數字，更要有解決真實問題的溫度。</span>
+                        </p> 
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">3.8億營收目標管理</span>
+                        <span class="skill-tag">140間門市人力配置導入</span>
+                        <span class="skill-tag">530小時AI全端訓練</span>
+                        <span class="skill-tag">7年跨國零售管理經驗</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-10 rounded-3xl border border-gray-100">
+                    <h3 class="text-xs font-black uppercase tracking-widest opacity-30 mb-6">Core Traits / 核心特質</h3>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="font-bold text-sm mb-2">謹慎與完美要求</p>
+                            <p class="text-xs text-gray-400 leading-loose">面對 3.8 億元業績目標時，我對數據精準度有強烈苛求，確保每一份報表都能成為優先的決策基礎。</p>
+                        </div>
+                         <div>
+                            <p class="font-bold text-sm mb-2">團隊合作與溝通協調</p>
+                            <p class="text-xs text-gray-400 leading-loose">「獲總公司評定為唯一 『0 複評』區域經理。我對細節的追求與責任感帶入團隊協作，確保活動從底層溝通到最終成果交付皆符合最高品質規格與團隊和諧。</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm mb-2">持續學習的活潑動力</p>
+                            <p class="text-xs text-gray-400 leading-loose">在數據分析中發現數據能發現肉眼無法察覺的營運盲點，對此產生了我對數據分析與AI強烈的興趣，為此我加入AI全端培训，追求如何用迅速準確、更具數據邏輯的方式解決問題。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-gray-50/50">
+        <div class="reveal">
+            <h2 class="text-xs font-black tracking-[0.4em] opacity-20 mb-16 uppercase text-center">Technical Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card p-10 space-y-6">
+                    <h3 class="text-xs font-bold accent-text uppercase tracking-widest">// 商業分析與數據洞察</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="skill-tag" data-name="Power BI"><img src="圖片存放/power-bi.png" alt="Power BI"></div>
+                        <div class="skill-tag" data-name="Tableau"><img src="圖片存放/tableau.png" alt="Tableau"></div>
+                        <div class="skill-tag" data-name="Excel"><img src="圖片存放/Excel.png" alt="Excel"></div>
+                        <div class="skill-tag" data-name="SQL"><img src="圖片存放/mysql.svg" alt="SQL"></div>
+                        <div class="skill-tag" data-name="MongoDB"><img src="圖片存放/mongodb.svg" alt="MongoDB"></div>
+                        <div class="skill-tag" data-name="PostgreSQL"><img src="圖片存放/postgresql.svg" alt="PostgreSQL"></div>
+                        <div class="skill-tag" data-name="Oracle"><img src="圖片存放/oracel.png" alt="Oracle"></div>
+                        <div class="skill-tag" data-name="市場趨勢預估"><span class="skill-text-card">市場趨勢<br>預估</span></div>
+                    </div>
+                </div>
+                <div class="glass-card p-10 space-y-6 border-blue-100">
+                    <h3 class="text-xs font-bold accent-text uppercase tracking-widest">// AI 數據工程</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="skill-tag" data-name="Python"><img src="圖片存放/python.png" alt="Python"></div>
+                        <div class="skill-tag" data-name="Pandas"><span class="skill-text-card">Pandas</span></div>
+                        <div class="skill-tag" data-name="FastAPI"><img src="圖片存放/FastAPI.svg" alt="FastAPI"></div>
+                        <div class="skill-tag" data-name="YOLO"><span class="skill-text-card">YOLO</span></div>
+                        <div class="skill-tag" data-name="LightGBM"><span class="skill-text-card">Light<br>GBM</span></div>
+                        <div class="skill-tag" data-name="Scikit-learn"><span class="skill-text-card">Scikit<br>learn</span></div>
+                        <div class="skill-tag" data-name="NumPy"><span class="skill-text-card">NumPy</span></div>
+                        <div class="skill-tag" data-name="LangChain"><span class="skill-text-card">Lang<br>Chain</span></div>
+                        <div class="skill-tag" data-name="LangGraph"><span class="skill-text-card">Lang<br>Graph</span></div>
+                        <div class="skill-tag" data-name="MCP"><span class="skill-text-card">MCP</span></div>
+                    </div>
+                </div>
+                <div class="glass-card p-10 space-y-6">
+                    <h3 class="text-xs font-bold accent-text uppercase tracking-widest">// 雲端與專案管理</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="skill-tag" data-name="AWS"><img src="圖片存放/AWS-Light.svg" alt="AWS"></div>
+                        <div class="skill-tag" data-name="GCP"><img src="圖片存放/GCP-Dark.svg" alt="GCP"></div>
+                        <div class="skill-tag" data-name="Docker"><img src="圖片存放/docker.png" alt="Docker"></div>
+                        <div class="skill-tag" data-name="Kubernetes"><img src="圖片存放/Kubernetes.png" alt="Kubernetes"></div>
+                        <div class="skill-tag" data-name="Linux"><img src="圖片存放/linux.png" alt="Linux"></div>
+                        <div class="skill-tag" data-name="GitHub"><img src="圖片存放/github.png" alt="GitHub"></div>
+                        <div class="skill-tag" data-name="進度規劃"><span class="skill-text-card">進度<br>規劃</span></div>
+                        <div class="skill-tag" data-name="專案管理"><span class="skill-text-card">專案<br>管理</span></div>
+                        <div class="skill-tag" data-name="團隊溝通"><span class="skill-text-card">團隊<br>溝通</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="reveal">
+            <h2 class="text-xs font-black tracking-[0.4em] opacity-20 mb-16 uppercase text-center">Career Milestones</h2>
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="glass-card p-12 relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row justify-between mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold">District Manager</h3>
+                            <p class="accent-text font-bold">黛安芬國際股份有限公司</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold">2024.11 - 2025.09</p>
+                            <p class="text-xs opacity-40">42間門市</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm text-gray-500 space-y-4 leading-loose">
+                        <li>• <span class="text-black font-bold">門市人力配置最佳化專案：</span>清洗歷史班表與業績數據，精準對齊時段流量與兼職需求，<span class="accent-text">獲人資長認可執行全台140間店鋪運行。</span></li>
+                        <li>• <span class="text-black font-bold">CRM 數據洞察：</span>參與團隊深度挖掘 CRM 系統中的顧客消費模式與生命週期數據，比對歷史銷售表現與量販體系潛在產值，產出洞察分析報告。</li>
+                        <li>• <span class="text-black font-bold">進階樞紐分析：</span>深度挖掘各店點客群輪廓獨特性，並據此優化商品訂單與庫存分配策略。精準對齊區域需求，<span class="accent-text">成功於母親節檔期驅動整體業績逾 15% 之強勢成長。</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-12">
+                    <div class="flex flex-col md:flex-row justify-between mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold">Retail Operations Supervisor</h3>
+                            <p class="accent-text font-bold">Quiksilver Retail Taiwan</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold">2023.12 - 2024.11</p>
+                            <p class="text-xs opacity-40">16間門市</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        百貨,門市,outlet三大通路管理<span class="accent-text">達成1.3 億元年度業績目標透過數據報表精準拆解銷售趨勢。</span>
+                    </p>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        主導端到端 (E2E) 展店專案，負責進度協調與硬體建置，確保店鋪如期順利開幕。
+                    </p>
+                </div>
+                <div class="glass-card p-12">
+                    <div class="flex flex-col md:flex-row justify-between mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold">營運督導</h3>
+                            <p class="accent-text font-bold">福福股份有限公司 (Nike 經銷)</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold">2022.09 - 2023.11</p>
+                            <p class="text-xs opacity-40">17間門市</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        深度分析銷售數據以制定商業策略，成功達成 <span class="accent-text">3.8 億年度業績目標</span>。
+                    </p>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        連續三場特賣會創下業績<span class="accent-text">突破 700 萬元紀錄。</span>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-gray-50/30">
+        <div class="reveal">
+            <h2 class="text-xs font-black tracking-[0.4em] opacity-20 mb-16 uppercase text-center">Core Projects</h2>
+            <div class="max-w-6xl mx-auto space-y-32">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <p class="accent-text font-bold text-xs mb-4">// PROJECT_01</p>
+                        <h3 class="text-4xl font-black mb-6">大台北房地產價格預測<br>與投資風險決策模型</h3>
+                        <p class="text-sm text-gray-500 leading-loose mb-8">
+                            作為專案經理 (PM)，我運用甘特圖控管 4 人團隊進度。採用 <span class="text-black font-bold">LightGBM 分位數回歸</span> 建模，MAPE 達 <span class="accent-text font-black">11.3%</span>。成功將繁雜資料轉化為具備獨立域名的動態估價網站。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xs font-black">AI</span>
+                                <p class="text-xs text-gray-500 mt-1">分位數回歸 (P10/P50/P90) 推算市場合理成交底價。</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xs font-black">API</span>
+                                <p class="text-xs text-gray-500 mt-1">FastAPI 獨立封裝三支核心預測接口。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div class="glass-card overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-105">
+                            <div class="bg-gray-800 p-3 flex gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                <span class="text-[9px] text-gray-500 ml-2">POWER_BI_DASHBOARD.exe</span>
+                            </div>
+                            <div class="aspect-video bg-gray-100 flex items-center justify-center text-xs text-gray-400">
+                                <p>房價預測視覺化儀表板 (點擊查看詳情)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div class="order-2 md:order-1 relative group">
+                        <div class="glass-card overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-105">
+                            <div class="bg-gray-800 p-3 flex gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                                <span class="text-[9px] text-gray-500 ml-2">RETAIL_DASHBOARD_V2</span>
+                            </div>
+                            <div class="aspect-video bg-gray-100 flex items-center justify-center text-xs text-gray-400">
+                                <p>門市人力預測模型展示</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="accent-text font-bold text-xs mb-4">// PROJECT_02</p>
+                        <h3 class="text-4xl font-black mb-6">門市人力配置<br>最佳化預測系統</h3>
+                        <p class="text-sm text-gray-500 leading-loose mb-8">
+                            這是我的核心實戰代表作。萃取並清洗歷史上班表與業績數據，建構人力預測模型。此專案獲得<span class="text-black font-bold">人資長認可</span>，並橫向導入全北區 140 間門市。
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-4">
+                            <li>• <span class="text-black font-bold">商業價值：</span> 降低冗餘人力成本，精準對齊時段客流量。</li>
+                            <li>• <span class="text-black font-bold">規模化能力：</span> 具備全台大規模門市橫向拓展之技術彈性。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="reveal max-w-4xl mx-auto text-center">
+            <h2 class="text-xs font-black tracking-[0.4em] opacity-20 mb-16 uppercase">Career Vision</h2>
+            <div class="space-y-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">短期目標：數據驅動決策</h3>
+                    <p class="text-sm text-gray-400 leading-loose">運用大數據工具建置即時視覺化決策儀表板，將複雜數據轉譯為前線能執行的降本增效策略。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">中長期目標：AI 生態整合</h3>
+                    <p class="text-sm text-gray-400 leading-loose">實現技術研發與商業實績的深度對齊，成為能將數據產值最大化的技術領導者。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center border-t border-gray-100">
+        <p class="text-xs font-black tracking-[1em] opacity-20 mb-8 uppercase">LAYLA TANG / 2026</p>
+        <div class="flex justify-center gap-12 text-xs font-bold opacity-50">
+            <a href="mailto:lala850307@gmail.com" class="hover:text-blue-600 transition">Email</a>
+            <a href="tel:0970-704-492" class="hover:text-blue-600 transition">Phone</a>
+            <a href="https://github.com/lala850307-glitch" target="_blank" class="hover:text-blue-600 transition">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".reveal").forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                y: 40,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,9 +1,12 @@
+# 告訴 Jekyll 忽略這些資料夾與檔案
 exclude:
   - node_modules
-  - .github
+  - vendor
+  - .bundle
   - .sass-cache
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
   - package.json
   - package-lock.json
+  - project-8406827  # 如果這是一個包含 node_modules 的專案資料夾，也把它排除

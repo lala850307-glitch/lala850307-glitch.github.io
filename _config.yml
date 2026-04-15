@@ -1,0 +1,9 @@
+exclude:
+  - node_modules
+  - .github
+  - .sass-cache
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json

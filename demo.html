@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layla Tang | Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { background-color: #FFFFFF; color: #1A1A1A; font-family: 'Inter', sans-serif; }
+        .section { min-height: 100vh; padding: 120px 10vw; border-bottom: 1px solid #F0F0F0; }
+        .glass-card { background: #FFFFFF; border: 1px solid #EAEAEA; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-radius: 24px; transition: transform 0.3s ease; }
+        .glass-card:hover { transform: translateY(-5px); }
+        .skill-dot { width: 8px; height: 8px; background: #007AFF; border-radius: 50%; display: inline-block; margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full p-6 bg-white/80 backdrop-blur-md z-50 flex justify-between items-center px-[10vw]">
+        <div class="font-extrabold tracking-tighter text-xl">LAYLA TANG</div>
+        <div class="space-x-8 text-sm font-medium opacity-60">
+            <a href="#about" class="hover:text-blue-600 transition">關於</a>
+            <a href="#work" class="hover:text-blue-600 transition">經歷</a>
+            <a href="#projects" class="hover:text-blue-600 transition">作品集</a>
+        </div>
+    </nav>
+
+    <section id="about" class="section flex flex-col justify-center">
+        <div class="max-w-4xl reveal">
+            <h1 class="text-7xl font-extrabold mb-8 leading-tight">數據翻譯者<br><span class="text-blue-600">唐廷磊</span></h1>
+            <p class="text-xl text-gray-500 leading-relaxed mb-12">
+                我是 Layla。在數據面前，我是個謹慎的完美主義者。我致力於將一線實戰直覺翻譯成決策邏輯，讓冰冷的數字擁有解決問題的溫度。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <div class="space-y-3">
+                    <h3 class="font-bold border-b pb-2">商業洞察</h3>
+                    <p class="text-sm opacity-60">Power BI / Tableau / 零售戰略</p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="font-bold border-b pb-2">AI 數據工程</h3>
+                    <p class="text-sm opacity-60">Python / FastAPI / YOLO / LightGBM</p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="font-bold border-b pb-2">專案統籌</h3>
+                    <p class="text-sm opacity-60">敏捷開發 / 甘特圖控管 / 跨部門對接</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section bg-gray-50/50">
+        <h2 class="text-sm font-bold tracking-[0.3em] opacity-30 mb-16 uppercase">Work Experience</h2>
+        <div class="space-y-12">
+            <div class="glass-card p-10 flex flex-col md:flex-row justify-between items-start reveal">
+                <div class="md:max-w-md">
+                    <h3 class="text-2xl font-bold mb-2">零售營運主管</h3>
+                    <p class="text-blue-600 font-medium mb-4">Nike / 2018 - 2025</p>
+                    <p class="text-sm text-gray-500">管理 17 間門市，達成 3.8 億年營收目標。主導跨部門資源整合與流程自動化優化。</p>
+                </div>
+                <div class="mt-4 md:mt-0 text-right">
+                    <span class="text-xs font-mono opacity-40">RETAIL OPS</span>
+                </div>
+            </div>
+            <div class="glass-card p-10 flex flex-col md:flex-row justify-between items-start reveal">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">AI 專案經理 (PM)</h3>
+                    <p class="text-blue-600 font-medium mb-4">企業專題專案 / 2025 - Present</p>
+                    <p class="text-sm text-gray-500">運用甘特圖控管 4 人團隊進度，負責房價預測與關鍵字搜尋系統的架構設計與交付。</p>
+                </div>
+            </div>
+            <div class="glass-card p-10 flex flex-col md:flex-row justify-between items-start reveal">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">資深零售策略諮詢</h3>
+                    <p class="text-blue-600 font-medium mb-4">Multinational Retailer / 7 Years Exp.</p>
+                    <p class="text-sm text-gray-500">具備跨國連鎖體系之數據監控與門市營運績效優化實務背景。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="text-sm font-bold tracking-[0.3em] opacity-30 mb-16 uppercase">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="glass-card overflow-hidden reveal">
+                <div class="h-64 bg-gray-100 flex items-center justify-center p-6">
+                    <div class="text-center">
+                        <p class="text-xs opacity-40 mb-4">[ Power BI Dashboard Mockup ]</p>
+                        <div class="border-4 border-white shadow-xl rounded-lg">
+                           <div class="w-full h-32 bg-gray-200 flex items-center justify-center text-[10px] text-gray-400">點擊查看 房價分析儀表板</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-3">台北市房價預測系統</h3>
+                    <p class="text-sm text-gray-500 mb-6">利用 LightGBM 分位數回歸，整合空間檢索特徵，實現 MAPE 11.3% 的精準估價。</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] bg-gray-100 px-2 py-1 rounded">FastAPI</span>
+                        <span class="text-[10px] bg-gray-100 px-2 py-1 rounded">Power BI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden reveal">
+                <div class="h-64 bg-gray-100 flex items-center justify-center p-6">
+                    <div class="text-center">
+                        <p class="text-xs opacity-40 mb-4">[ YOLO Recognition Video ]</p>
+                        <div class="border-4 border-white shadow-xl rounded-lg">
+                            <div class="w-full h-32 bg-gray-200 flex items-center justify-center text-[10px] text-gray-400">點擊播放 物體偵測動態展示</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-3">企業級關鍵字搜尋系統</h3>
+                    <p class="text-sm text-gray-500 mb-6">主導後端與 AI 串接，建立模糊搜尋 API，優化企業內部文件調閱速度 40%。</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] bg-gray-100 px-2 py-1 rounded">Docker</span>
+                        <span class="text-[10px] bg-gray-100 px-2 py-1 rounded">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center opacity-20 text-xs tracking-widest uppercase">
+        © 2026 Layla Tang. Driven by Data, Defined by Action.
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".reveal").forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+    </script>
+</body>
+</html>

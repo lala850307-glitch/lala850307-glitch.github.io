@@ -355,8 +355,8 @@
       height: 500px; background: #000; margin-bottom: 4rem;
     }
     .cta-photo img {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 420px; height: 100%; object-fit: cover; object-position: center 20%;
+      position: absolute; top: 0; left: 0%; transform: translateX(-50%);
+      width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
       filter: grayscale(100%) contrast(1.15) brightness(0.55);
       animation: kenBurns 18s ease-in-out infinite alternate;
     }
@@ -457,11 +457,13 @@
     .proj-card:hover { border-color: rgba(0,0,0,0.15); }
     .proj-card-grid { display: grid; grid-template-columns: 1fr 1fr; }
     .proj-card-media { position: relative; min-height: 300px; overflow: hidden; }
-    .proj-card-media img {
+    .proj-card-media img,
+    .proj-card-media video {
       width: 100%; height: 100%; object-fit: cover; object-position: top;
       transition: transform 0.7s;
     }
-    .proj-card:hover .proj-card-media img { transform: scale(1.05); }
+    .proj-card:hover .proj-card-media img,
+    .proj-card:hover .proj-card-media video { transform: scale(1.05); }
     .proj-metric {
       position: absolute; top: 1.25rem; left: 1.25rem;
       background: rgba(0,0,0,0.8); color: #fff;
@@ -613,7 +615,7 @@
   <section id="hero">
     <div class="particles" id="particles"></div>
     <div class="hero-bg">
-      <img src="https://storage.readdy-site.link/project_files/a713b50e-f6ea-4b8a-8a59-49e71ed6b3f7/9C11E410-79D6-435F-8D61-28DB370DB79E.jpg" alt="Background" />
+      <img src="https://www.image2url.com/r2/default/images/1776318275061-8a7ca535-b28e-412f-a553-bc4eb4d06a9b.jpg" alt="Background" />
     </div>
     <div class="hero-overlay-b"></div>
     <div class="hero-overlay-r"></div>
@@ -824,7 +826,7 @@
   <section id="cta-section">
     <div class="section-inner">
       <div class="cta-photo">
-        <img src="https://storage.readdy-site.link/project_files/a713b50e-f6ea-4b8a-8a59-49e71ed6b3f7/431CB924-40A7-48CE-BC21-411DBE210517.jpg" alt="Layla Tang" />
+        <img src="https://cdn.phototourl.com/free/2026-04-16-71a43999-281d-4240-b777-a1577edd7e5d.jpg" alt="Layla Tang" />
         <div class="cta-photo-fade"></div>
         <div class="cta-photo-vignette"></div>
         <div class="cta-marquee-wrap">
@@ -922,7 +924,7 @@
         <div class="proj-card" data-cat="Machine Learning" onclick="openExternal('https://tperealestate.franceslaw.tech/')">
           <div class="proj-card-grid">
             <div class="proj-card-media">
-              <img src="https://readdy.ai/api/search-image?query=real%20estate%20data%20analytics%20dashboard%20machine%20learning%20prediction%20model%20minimal%20dark%20interface%20Taiwan%20city%20map%20visualization&width=800&height=500&seq=rp1&orientation=landscape" alt="大台北房地產價格預測" />
+              <video autoplay muted loop playsinline src="https://www.image2url.com/r2/default/videos/1776316782053-878c0cdc-bcfc-452e-8062-91b079776aad.mp4" alt="大台北房地產價格預測"></video>
               <div class="proj-metric">MAPE 11.3%</div>
               <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-arrow-right-up-line"></i> View Project</div></div>
             </div>
@@ -945,7 +947,7 @@
         <div class="proj-card" data-cat="Data Engineering" onclick="openModal(2)">
           <div class="proj-card-grid" style="direction:rtl">
             <div class="proj-card-media" style="direction:ltr">
-              <img src="https://readdy.ai/api/search-image?query=retail%20workforce%20scheduling%20optimization%20data%20dashboard%20minimal%20clean%20dark%20analytics%20business%20intelligence%20store%20management&width=800&height=500&seq=rp2&orientation=landscape" alt="零售人力配置最佳化系統" />
+              <video autoplay muted loop playsinline src="https://www.image2url.com/r2/default/videos/1776317488093-1a97a2c6-d58a-4a69-9d65-9b0915185e8b.mp4" alt="零售人力配置最佳化系統"></video>
               <div class="proj-metric">140 間門市</div>
               <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
             </div>
@@ -965,41 +967,10 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="proj-card" data-cat="Business Analytics">
-          <div class="proj-card-grid">
-            <div class="proj-card-media">
-              <img src="https://readdy.ai/api/search-image?query=CRM%20customer%20lifecycle%20analytics%20dashboard%20minimal%20dark%20clean%20data%20visualization%20business%20report%20retail%20consumer%20behavior&width=800&height=500&seq=rp3&orientation=landscape" alt="CRM 顧客生命週期分析報告" />
-            </div>
-            <div class="proj-card-info">
-              <div class="proj-meta"><span class="proj-cat">Business Analytics</span><span class="proj-dot">·</span><span class="proj-year">2024</span></div>
-              <h2 class="proj-title">CRM 顧客生命週期分析報告</h2>
-              <p class="proj-desc">深度挖掘 CRM 系統中的顧客消費模式與生命週期數據，比對歷史銷售表現與量販體系潛在產值，產出洞察分析報告支援決策。</p>
-              <div class="proj-tags"><span class="proj-tag">CRM</span><span class="proj-tag">SQL</span><span class="proj-tag">Tableau</span><span class="proj-tag">顧客分析</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="proj-card" data-cat="Business Analytics">
-          <div class="proj-card-grid" style="direction:rtl">
-            <div class="proj-card-media" style="direction:ltr">
-              <img src="https://readdy.ai/api/search-image?query=inventory%20management%20strategy%20retail%20analytics%20minimal%20clean%20data%20dashboard%20product%20allocation%20business%20growth%20chart&width=800&height=500&seq=rp4&orientation=landscape" alt="母親節檔期商品庫存分配策略" />
-              <div class="proj-metric">+15% 業績成長</div>
-            </div>
-            <div class="proj-card-info" style="direction:ltr">
-              <div class="proj-meta"><span class="proj-cat">Business Analytics</span><span class="proj-dot">·</span><span class="proj-year">2024</span></div>
-              <h2 class="proj-title">母親節檔期商品庫存分配策略</h2>
-              <p class="proj-desc">深度挖掘各店點客群輪廓獨特性，優化商品訂單與庫存分配策略，精準對齊區域需求，成功驅動整體業績逾 15% 強勢成長。</p>
-              <div class="proj-tags"><span class="proj-tag">樞紐分析</span><span class="proj-tag">Excel</span><span class="proj-tag">庫存管理</span><span class="proj-tag">業績成長</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
         <div class="proj-card" data-cat="Data Visualization" onclick="openModal(5)">
           <div class="proj-card-grid">
             <div class="proj-card-media">
-              <img src="https://readdy.ai/api/search-image?query=Taiwan%20traffic%20accident%20data%20Power%20BI%20dashboard%20dark%20interactive%20heatmap%20fatality%20statistics%20road%20safety%20analytics%20minimal%20professional&width=800&height=500&seq=rp5&orientation=landscape" alt="Power BI 全台交通事故診斷儀表板" />
+              <video autoplay muted loop playsinline src="https://www.image2url.com/r2/default/videos/1776317105153-f23d1a15-250e-4715-8baa-b2215cfa7c7f.mp4" alt="powPower BI 全台交通事故診斷儀表板"></video>
               <div class="proj-metric">3.1萬筆數據</div>
               <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
             </div>
@@ -1018,11 +989,11 @@
           </div>
         </div>
 
-        <!-- Project 6 -->
+        <!-- Project 4 -->
         <div class="proj-card" data-cat="Data Visualization" onclick="openModal(6)">
           <div class="proj-card-grid" style="direction:rtl">
             <div class="proj-card-media" style="direction:ltr">
-              <img src="https://readdy.ai/api/search-image?query=electricity%20power%20quality%20Tableau%20dashboard%20energy%20monitoring%20dual%20axis%20chart%2024%20hour%20trend%20dark%20minimal%20analytics%20professional%20clean&width=800&height=500&seq=rp6&orientation=landscape" alt="Tableau 電力品質與節能診斷儀表板" />
+              <video autoplay muted loop playsinline src="https://www.image2url.com/r2/default/videos/1776317105153-f23d1a15-250e-4715-8baa-b2215cfa7c7f.mp4" alt="powPower BI 全台交通事故診斷儀表板"></video>
               <div class="proj-metric">PF 風險診斷</div>
               <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
             </div>

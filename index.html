@@ -462,6 +462,11 @@
       width: 100%; height: 100%; object-fit: cover; object-position: top;
       transition: transform 0.7s;
     }
+    .proj-card-media img.diagram-img {
+      object-fit: contain;
+      padding: 2.5rem;
+      background: #f5f4f0;
+    }
     .proj-card:hover .proj-card-media img,
     .proj-card:hover .proj-card-media video { transform: scale(1.05); }
     .proj-metric {
@@ -628,13 +633,14 @@
           <span class="line"><span>Layla Tang</span></span>
         </h1>
         <div class="hero-intro">
-          <p>具備近 7 年大型跨國零售品牌通路營運管理經驗，致力於將複雜數據轉譯為具體行動方案，驅動企業營收成長與優化成本的戰略分析橋樑。</p>
-          <blockquote>我相信，最好的決策不再只是有冰冷的數字，更要有解決真實問題的溫度。</blockquote>
+          <p>具備近 7 年大型跨國零售營運管理經驗，現專注於<strong>資料工程與自動化數據管線建置</strong>。致力於結合扎實的商業洞察與 ETL 開發能力，將龐雜的原始數據轉譯為具體行動方案，成為驅動企業營收與優化成本的技術戰略橋樑。</p>
+          <blockquote>我相信，最好的決策不僅來自穩健乾淨的數據工程，更需要具備解決真實商業問題的解決方針。</blockquote>
         </div>
         <div class="hero-keywords">
+          <span class="hero-keyword">自動化 ETL 數據管線建置</span>
           <span class="hero-keyword">3.8億營收目標管理</span>
-          <span class="hero-keyword">140間門市人力配置導入</span>
-          <span class="hero-keyword">530小時AI全端訓練</span>
+          <span class="hero-keyword">140間門市智能排班模型</span>
+          <span class="hero-keyword">GCP / ELK / AWS / Splunk 架構實作</span>
           <span class="hero-keyword">7年跨國零售管理經驗</span>
         </div>
         <div class="hero-actions">
@@ -662,7 +668,7 @@
         <div class="trait-card">
           <div class="trait-num">02</div>
           <h3 class="trait-title">團隊合作與溝通協調</h3>
-          <p class="trait-desc">獲總公司評定為唯一「0 複評」區域經理。我對細節的追求與責任感帶入團隊協作，確保活動從底層溝通到最終成果交付皆符合最高品質規格與團隊和諧。</p>
+          <p class="trait-desc">獲總公司評定為唯一「0 負評」區域經理。我對細節的追求與責任感帶入團隊協作，確保活動從底層溝通到最終成果交付皆符合最高品質規格與團隊和諧。</p>
         </div>
         <div class="trait-card">
           <div class="trait-num">03</div>
@@ -697,27 +703,33 @@
         <p class="skills-sub">跨越商業分析、AI 工程與零售營運的複合技能組合。</p>
       </div>
       <div class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab(this,'ba')">商業分析與數據洞察</button>
-        <button class="tab-btn" onclick="switchTab(this,'ai')">AI 數據工程</button>
+        <button class="tab-btn active" onclick="switchTab(this,'ai')">AI 數據工程</button>
+        <button class="tab-btn" onclick="switchTab(this,'ba')">商業分析與數據洞察</button>
         <button class="tab-btn" onclick="switchTab(this,'retail')">零售營運管理</button>
       </div>
       <div class="skills-panel">
-        <div id="tab-ba">
+        <div id="tab-ba" style="display:none">
           <p class="skills-cat-label">// Business Analytics</p>
           <div class="skills-chips">
-            <div class="skill-chip">Power BI</div><div class="skill-chip">Tableau</div><div class="skill-chip">Excel</div><div class="skill-chip">SQL</div><div class="skill-chip">MongoDB</div><div class="skill-chip">PostgreSQL</div><div class="skill-chip">Oracle</div><div class="skill-chip">市場趨勢預估</div>
+            <div class="skill-chip">Power BI</div><div class="skill-chip">Tableau</div><div class="skill-chip">Excel</div><div class="skill-chip">SQL</div><div class="skill-chip">MongoDB</div><div class="skill-chip">PostgreSQL</div><div class="skill-chip">Oracle</div><div class="skill-chip">市場趨勢預估</div><div class="skill-chip">資料分析</div><div class="skill-chip">根因分析</div><div class="skill-chip">Data Quality</div>
           </div>
         </div>
-        <div id="tab-ai" style="display:none">
+        <div id="tab-ai">
           <p class="skills-cat-label">// AI &amp; Data Engineering</p>
+          <p class="skills-cat-label">// Artificial Intelligence</p>
+          <div class="skills-chips" style="margin-bottom: 2.5rem;">
+            <div class="skill-chip">Python</div><div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div><div class="skill-chip">Scikit-learn</div><div class="skill-chip">LightGBM</div><div class="skill-chip">RAG</div><div class="skill-chip">LangChain / LangGraph</div>
+          </div>
+          <p class="skills-cat-label">// Data Engineering &amp; Infrastructure</p>
           <div class="skills-chips">
-            <div class="skill-chip">Python</div><div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div><div class="skill-chip">Scikit-learn</div><div class="skill-chip">TensorFlow</div><div class="skill-chip">Prompt Engineering</div><div class="skill-chip">LLM應用</div><div class="skill-chip">自動化流程</div>
+            <div class="skill-chip">Python</div><div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div><div class="skill-chip">Scikit-learn</div><div class="skill-chip">Rag</div><div class="skill-chip">自動化流程</div><div class="skill-chip">LightGBM</div><div class="skill-chip">Selenium</div><div class="skill-chip">API 串接</div><div class="skill-chip">ETL / Data Pipeline</div><div class="skill-chip">ELK / Kibana /Splunk</div><div class="skill-chip">GCP/AWS</div><div class="skill-chip">Linux</div> <div class="skill-chip">Docker/Kubernetes</div><div class="skill-chip"> LangChain/LangGraph </div>
+            <div class="skill-chip">ETL / Data Pipeline</div><div class="skill-chip">自動化流程</div><div class="skill-chip">Selenium</div><div class="skill-chip">API 串接</div><div class="skill-chip">ELK / Kibana / Splunk</div><div class="skill-chip">GCP / AWS</div><div class="skill-chip">Docker / Kubernetes</div><div class="skill-chip">Linux</div>
           </div>
         </div>
         <div id="tab-retail" style="display:none">
           <p class="skills-cat-label">// Retail Operations</p>
           <div class="skills-chips">
-            <div class="skill-chip">通路策略規劃</div><div class="skill-chip">人力資源配置</div><div class="skill-chip">KPI 績效管理</div><div class="skill-chip">供應鏈優化</div><div class="skill-chip">門市稽核</div><div class="skill-chip">跨部門協作</div><div class="skill-chip">專案管理</div><div class="skill-chip">成本控管</div>
+            <div class="skill-chip">通路策略規劃</div><div class="skill-chip">人力資源配置</div><div class="skill-chip">KPI 績效管理</div><div class="skill-chip">供應鏈優化</div><div class="skill-chip">門市稽核</div><div class="skill-chip">跨部門協作</div><div class="skill-chip">專案管理</div><div class="skill-chip">成本控管</div><div class="skill-chip">CRM 分析</div>
           </div>
         </div>
       </div>
@@ -967,29 +979,76 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="proj-card" data-cat="Data Visualization" onclick="openModal(5)">
+        <div class="proj-card" data-cat="Data Engineering" onclick="openModal(7)">
           <div class="proj-card-grid">
             <div class="proj-card-media">
-              <video autoplay muted loop playsinline src="https://www.image2url.com/r2/default/videos/1776317105153-f23d1a15-250e-4715-8baa-b2215cfa7c7f.mp4" alt="powPower BI 全台交通事故診斷儀表板"></video>
-              <div class="proj-metric">3.1萬筆數據</div>
+              <!-- 建議後續可以替換成專案實際執行的螢幕錄影或是相關的截圖 -->
+              <img src="https://www.image2url.com/r2/default/images/1777814204651-99386e72-ac7b-4ad6-a403-b5f6d1ed198d.png" alt="系統架構圖" class="diagram-img" />
+              <div class="proj-metric">100% 自動化</div>
               <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
             </div>
             <div class="proj-card-info">
-              <div class="proj-meta"><span class="proj-cat">Data Visualization</span><span class="proj-dot">·</span><span class="proj-year">2025</span></div>
-              <h2 class="proj-title">Power BI 全台交通事故診斷儀表板</h2>
-              <p class="proj-desc">處理全台逾 3.1 萬筆傷亡數據，運用 Power BI 建置包含互動式地圖、小倍數圖與連動切片器的診斷儀表板。深掘高達 56% 致死率之成因，精準定位「6月/12月」與「深夜時段」為高致命風險熱區。</p>
+              <div class="proj-meta"><span class="proj-cat">Data Engineering</span><span class="proj-dot">·</span><span class="proj-year">2025</span></div>
+              <h2 class="proj-title">自動化資料擷取與品質驗證管線</h2>
+              <p class="proj-desc">基於 Python 與 Selenium 開發的自動化腳本。模擬使用者行為進行網頁互動與資料收集，並同步呼叫後端 API 驗證數據一致性，最終自動產出結構化報告。</p>
               <div class="proj-highlights">
-                <div class="proj-highlight"><span class="proj-hl-badge">視覺化</span><p class="proj-hl-text">互動式地圖、小倍數圖與連動切片器，多維度剖析全台事故分布</p></div>
-                <div class="proj-highlight"><span class="proj-hl-badge">洞察</span><p class="proj-hl-text">定位 6月/12月 與深夜時段為高致命熱區，56% 致死率根因診斷</p></div>
-                <div class="proj-highlight"><span class="proj-hl-badge">決策</span><p class="proj-hl-text">提出精準執法、基礎設施優化、分眾宣導三大治理對策</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">自動化爬取</span><p class="proj-hl-text">使用 Selenium Headless 模式於背景高效擷取畫面與數據</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">資料品質</span><p class="proj-hl-text">設計 API 狀態同步驗證，確保擷取的前端數據與資料庫一致</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">報表產出</span><p class="proj-hl-text">無縫整合測試結果與網頁快照，自動生成綜合性視覺化報告</p></div>
               </div>
-              <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">數據視覺化</span><span class="proj-tag">互動式地圖</span><span class="proj-tag">根因分析</span></div>
-              <div class="proj-cta-text"><span>Click to view demo</span><span>→</span></div>
+              <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Selenium</span><span class="proj-tag">API 驗證</span><span class="proj-tag">Data Quality</span></div>
+              <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
+        <div class="proj-card" data-cat="Data Engineering" onclick="openModal(8)">
+          <div class="proj-card-grid" style="direction:rtl">
+            <div class="proj-card-media" style="direction:ltr">
+              <!-- 建議後續可以替換成專案實際執行的螢幕錄影或是相關的截圖 -->
+              <img src="https://www.image2url.com/r2/default/images/1777813418795-ef1517db-d66a-466f-90b9-2c451a5d2852.png" alt="系統架構圖" class="diagram-img" />
+              <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
+            </div>
+            <div class="proj-card-info" style="direction:ltr">
+              <div class="proj-meta"><span class="proj-cat">Data Engineering</span><span class="proj-dot">·</span><span class="proj-year">2025</span></div>
+              <h2 class="proj-title">安全法規 ETL 自動化數據管線與分析</h2>
+              <p class="proj-desc">建構完整的 ETL (Extract, Transform, Load) 數據管線，自動化擷取安全法規相關資料，並進行清洗與結構化轉換，最終載入分析庫以供後續洞察使用，有效提升數據處理效率並確保資料品質。</p>
+              <div class="proj-highlights">
+                <div class="proj-highlight"><span class="proj-hl-badge">自動化</span><p class="proj-hl-text">實現端到端的數據擷取與排程自動化更新流程</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">數據處理</span><p class="proj-hl-text">標準化法規數據格式，設計正規化邏輯處理非結構化資料</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">管線建置</span><p class="proj-hl-text">設計可擴展的 ETL 架構，支援後續多源安全法規數據整合與分析</p></div>
+              </div>
+              <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">ETL</span><span class="proj-tag">Data Pipeline</span><span class="proj-tag">Data Analysis</span></div>
+              <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="proj-card" data-cat="Data Engineering" onclick="openModal(9)">
+          <div class="proj-card-grid">
+            <div class="proj-card-media">
+              <img src="https://www.image2url.com/r2/default/images/1777815147298-786794aa-813e-4293-8c6f-799ec7b2b598.png" alt="ELK Pipeline 架構圖" class="diagram-img" />
+              <div class="proj-metric">ELK Pipeline</div>
+              <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-meta"><span class="proj-cat">Data Engineering</span><span class="proj-dot">·</span><span class="proj-year">2025</span></div>
+              <h2 class="proj-title">零售數據自動化分析平台 (ELK 數據管線實作)</h2>
+              <p class="proj-desc">在 GCP 上搭建 ELK 環境，實現從 CSV 數據匯入、即時清洗 (ETL) 到 Kibana 視覺化儀表板的完整自動化數據管線。</p>
+              <div class="proj-highlights">
+                <div class="proj-highlight"><span class="proj-hl-badge">管線</span><p class="proj-hl-text">實現端到端的數據擷取、轉換與載入自動化流程</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">ETL</span><p class="proj-hl-text">透過 Logstash 處理非標準日期、地理資訊與業務指標</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">BI</span><p class="proj-hl-text">於 Kibana 建置多維度商業智能儀表板，洞察銷售趨勢</p></div>
+              </div>
+              <div class="proj-tags"><span class="proj-tag">ELK Stack</span><span class="proj-tag">GCP</span><span class="proj-tag">Logstash</span><span class="proj-tag">ETL</span><span class="proj-tag">Kibana</span></div>
+              <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
         <div class="proj-card" data-cat="Data Visualization" onclick="openModal(6)">
           <div class="proj-card-grid" style="direction:rtl">
             <div class="proj-card-media" style="direction:ltr">
@@ -1011,6 +1070,8 @@
             </div>
           </div>
         </div>
+
+
 
       </div>
     </div>
@@ -1205,6 +1266,48 @@
       ],
       tags: ['Tableau', '電力分析', '功率因數', '節能優化'],
     },
+    7: {
+      title: '自動化資料擷取與品質驗證管線',
+      category: 'Data Engineering', year: '2025',
+      metric: '100% 自動化',
+      description: '為解決人工介入審核的痛點，運用 Python 與 Selenium 建置自動化網頁互動與資料擷取流程。透過讀取自訂的測試計畫，程式能自動走訪目標網址填寫表單並擷取畫面，同時同步呼叫後端 API 進行資料一致性比對（Data Quality Validation）。最終自動生成包含截圖與數據狀態的綜合報告，建立高可靠性的資料擷取解決方案。',
+      highlights: [
+        { label: '自動化爬取', desc: '導入 Selenium 與 webdriver-manager，支援 Headless 模式高效穩定執行' },
+        { label: '資料品質', desc: '串接並驗證後端 API 回應狀態，確保收集到的前端數據無落差' },
+        { label: '報表產出', desc: '整合測試狀態與自動截圖機制，自動匯出完整的結構化檢核報表' },
+      ],
+      tags: ['Python', 'Selenium', 'API Integration', 'Data Quality', 'Automation'],
+      videoUrl: '', // 如果未來有錄製專案運行的影片，可以填入網址
+      githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline',
+    },
+    8: {
+      title: '安全法規 ETL 自動化數據管線與分析',
+      category: 'Data Engineering', year: '2025',
+      metric: 'ETL 管線',
+      description: '為解決安全法規數據散落且格式不一的問題，開發建構一套完整的 ETL (Extract, Transform, Load) 數據管線。透過 Python 自動化擷取來源資料，經過清洗、正規化與結構化轉換後，統一載入資料庫中供後續分析使用。此管線不僅大幅減少人工作業時間，更確保了數據的準確性與一致性，為後續的法規遵循分析與視覺化儀表板提供堅實的數據基礎。',
+      highlights: [
+        { label: '自動化擷取', desc: '設計穩定可靠的爬蟲腳本，實現端到端的數據擷取與排程自動化更新' },
+        { label: '數據清洗', desc: '實作多種數據轉換邏輯，精準清洗並標準化非結構化法規內容' },
+        { label: '架構與分析', desc: '建構具備高擴充性的 ETL 管線架構，便於未來整合更多不同來源的法規資料並執行深度分析' },
+      ],
+      tags: ['Python', 'ETL', 'Data Engineering', 'Data Pipeline', 'Data Analysis'],
+      videoUrl: '', // 如果未來有錄製專案運行的影片，可以填入網址
+      githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline/tree/main/Safety-Regs-ETL-Pipeline/analysis',
+    },
+    9: {
+      title: '零售數據自動化分析平台 (ELK 數據管線實作)',
+      category: 'Data Engineering', year: '2025',
+      metric: 'ELK Pipeline',
+      description: '建構一套完整的 ELK (Elasticsearch, Logstash, Kibana) 數據管線，自動化處理零售 CSV 數據。此專案在 GCP Linux 環境中部署 Logstash 腳本，實現了從原始數據擷取、透過複雜的 ETL 轉換（利用 mutate/gsub 清理中文字元、重組時間字串並強制轉型），到最終無縫載入 Elasticsearch，並在 Kibana 上建構多維度商業智能儀表板的端到端自動化流程。',
+      highlights: [
+        { label: '自動化管線', desc: '在 GCP Linux 環境上部署自動化清洗排程，實現從 CSV 數據匯入、即時清洗到視覺化輸出的完整自動化流程。' },
+        { label: 'Logstash ETL', desc: '利用 csv filter 解析欄位，搭配 mutate (gsub/convert) 剔除「年月」中文字元並將 lat/lon 與銷售指標強制轉為 float，最後透過 date 插件精準對齊時區與時間序列 (report_date)。' },
+        { label: '多維度 BI 儀表板', desc: '於 Kibana 設計地圖分析、月成長動態追蹤、店點毛利排行等 5 種以上視覺化圖表，提供多維度的商業洞察。' },
+      ],
+      tags: ['ELK Stack', 'GCP', 'Logstash', 'Elasticsearch', 'Kibana', 'Linux', 'ETL'],
+      videoUrl: '',
+      githubUrl: 'https://github.com/lala850307-glitch', // 建議建立一個 repo (例如 ELK-Retail-Pipeline) 放這段 conf
+    },
   };
 
   function openModal(id) {
@@ -1249,6 +1352,13 @@
           <span class="modal-tags-label">Tools</span>
           ${tagsHtml}
         </div>
+        ${data.githubUrl ? `
+          <div style="margin-top: 2rem;">
+            <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-dark" style="padding: 1rem 2rem; font-size: 0.75rem;">
+              <i class="ri-github-fill" style="margin-right: 0.5rem; font-size: 1.1rem;"></i> View Source Code on GitHub
+            </a>
+          </div>
+        ` : ''}
       </div>`;
 
     overlay.classList.add('open');

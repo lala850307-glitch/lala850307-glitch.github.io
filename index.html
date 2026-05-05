@@ -155,8 +155,8 @@
       opacity: 0; animation: fadeUp 0.7s ease 0.3s forwards;
     }
     .hero-title {
-      font-size: clamp(3rem,10vw,8rem); font-weight: 900;
-      color: #fff; line-height: 0.9; letter-spacing: -0.03em;
+      font-size: clamp(3rem,6vw,8rem); font-weight: 800;
+      color: #fff; line-height: 1.; letter-spacing: -0.03em;
       margin-bottom: 2.5rem;
     }
     .hero-title .line { display: block; overflow: hidden; }
@@ -563,6 +563,7 @@
       .modal-hl-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
+      .cta-photo { height: 380px; }
       .nav-inner { padding: 0 1.5rem; height: 64px; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
@@ -582,6 +583,30 @@
       .modal-hl-grid { grid-template-columns: 1fr; }
       .modal-content { padding: 1.5rem; }
       footer { padding: 4rem 1.5rem 2rem; }
+    }
+    @media (max-width: 480px) {
+      .cta-photo { height: 260px; margin-bottom: 2.5rem; border-radius: 0.75rem; }
+      .cta-photo img { object-position: center 10%; }
+      .hero-content { padding: 5rem 1.25rem 3rem; }
+      .hero-keywords { gap: 6px; }
+      .hero-keyword { font-size: 0.65rem; padding: 3px 8px; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
+      .stat-value { font-size: clamp(2rem,10vw,3rem); }
+      .stat-label { font-size: 0.7rem; }
+      #about-section, #skills-section, #experience-section, #vision-section, #cta-section { padding: 4rem 1.25rem; }
+      #stats-section { padding: 3rem 1.25rem; }
+      .skills-tabs { gap: 0.4rem; }
+      .skills-tab { font-size: 0.7rem; padding: 0.3rem 0.7rem; }
+      .skill-chip { font-size: 0.7rem; padding: 3px 10px; }
+      .cta-heading { font-size: clamp(2rem,10vw,3.5rem); }
+      .cta-actions { flex-direction: column; width: 100%; }
+      .cta-actions a { width: 100%; text-align: center; justify-content: center; }
+      .filter-bar { gap: 0.4rem; }
+      .filter-btn { font-size: 0.65rem; padding: 0.3rem 0.7rem; }
+      .proj-card-media { max-height: 240px; }
+      .modal-content { padding: 1.25rem; border-radius: 12px 12px 0 0; }
+      footer { padding: 3rem 1.25rem 1.5rem; }
+      .footer-watermark { font-size: clamp(3rem,18vw,6rem); }
     }
   </style>
 </head>
@@ -639,11 +664,11 @@
           <blockquote>我相信，最好的決策不僅來自穩健乾淨的數據工程，更需要具備解決真實商業問題的數據決策。</blockquote>
         </div>
         <div class="hero-keywords">
-          <span class="hero-keyword">自動化 ETL 數據管線建置</span>
+          <span class="hero-keyword">7年跨國零售管理經驗</span>
           <span class="hero-keyword">3.8億營收目標管理</span>
           <span class="hero-keyword">140間門市智能排班模型</span>
-          <span class="hero-keyword">GCP / ELK / AWS / Splunk 架構實作</span>
-          <span class="hero-keyword">7年跨國零售管理經驗</span>
+          <span class="hero-keyword">主導開發"mohuhu"模糊查詢系統</span>
+          <span class="hero-keyword">自動化 ETL 數據管線建置</span>
         </div>
         <div class="hero-actions">
           <a href="mailto:lala850307@gmail.com" class="btn-primary">Contact Me <span>→</span></a>
@@ -717,14 +742,12 @@
           </div>
         </div>
         <div id="tab-ai">
-          <p class="skills-cat-label">// AI &amp; Data Engineering</p>
           <p class="skills-cat-label">// Artificial Intelligence</p>
           <div class="skills-chips" style="margin-bottom: 2.5rem;">
             <div class="skill-chip">Python</div><div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div><div class="skill-chip">Scikit-learn</div><div class="skill-chip">LightGBM</div><div class="skill-chip">RAG</div><div class="skill-chip">LangChain / LangGraph</div>
           </div>
           <p class="skills-cat-label">// Data Engineering &amp; Infrastructure</p>
           <div class="skills-chips">
-            <div class="skill-chip">Python</div><div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div><div class="skill-chip">Scikit-learn</div><div class="skill-chip">Rag</div><div class="skill-chip">自動化流程</div><div class="skill-chip">LightGBM</div><div class="skill-chip">Selenium</div><div class="skill-chip">API 串接</div><div class="skill-chip">ETL / Data Pipeline</div><div class="skill-chip">ELK / Kibana /Splunk</div><div class="skill-chip">GCP/AWS</div><div class="skill-chip">Linux</div> <div class="skill-chip">Docker/Kubernetes</div><div class="skill-chip"> LangChain/LangGraph </div>
             <div class="skill-chip">ETL / Data Pipeline</div><div class="skill-chip">自動化流程</div><div class="skill-chip">Selenium</div><div class="skill-chip">API 串接</div><div class="skill-chip">ELK / Kibana / Splunk</div><div class="skill-chip">GCP / AWS</div><div class="skill-chip">Docker / Kubernetes</div><div class="skill-chip">Linux</div>
           </div>
         </div>
@@ -1082,7 +1105,7 @@
     <div class="proj-bottom-cta">
       <div style="max-width:1280px;margin:0 auto">
         <h2>Interested in<br><em>collaborating?</em></h2>
-        <a href="mailto:lala850307@gmail.com" class="btn-primary" style="font-size:0.8rem;padding:1.25rem 2.5rem">Get in Touch <span>→</span></a>
+        <a href="mailto:lala850307@gmail.com" class="btn-primary" style="font-size:0.8rem;padding:1.25rem 2.5rem">email me <span>→</span></a>
       </div>
     </div>
 

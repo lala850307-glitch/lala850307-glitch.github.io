@@ -456,7 +456,7 @@
     }
     .proj-card:hover { border-color: rgba(0,0,0,0.15); }
     .proj-card-grid { display: grid; grid-template-columns: 1fr 1fr; }
-    .proj-card-media { position: relative; min-height: 300px; overflow: hidden; }
+    .proj-card-media { position: relative; min-height: 300px; max-height: 480px; overflow: hidden; }
     .proj-card-media img,
     .proj-card-media video {
       width: 100%; height: 100%; object-fit: cover; object-position: top;
@@ -464,11 +464,13 @@
     }
     .proj-card-media img.diagram-img {
       object-fit: contain;
-      padding: 2.5rem;
+      object-position: top center;
+      padding: 1.5rem;
       background: #f5f4f0;
+      max-height: 480px;
     }
     .proj-card:hover .proj-card-media img,
-    .proj-card:hover .proj-card-media video { transform: scale(1.05); }
+    .proj-card:hover .proj-card-media video { transform: scale(1.); }
     .proj-metric {
       position: absolute; top: 1.25rem; left: 1.25rem;
       background: rgba(0,0,0,0.8); color: #fff;
@@ -859,7 +861,7 @@
         </h2>
         <p class="cta-sub">歡迎洽談合作機會、數據分析專案或任何商業策略需求。</p>
         <div class="cta-actions">
-          <a href="mailto:lala850307@gmail.com" class="btn-dark">Email Me <span>→</span></a>
+          <a href="javascript:void(0)" onclick="showPage('projects')" class="btn-dark">Projects <span>→</span></a>
           <a href="https://github.com/lala850307-glitch" target="_blank" rel="nofollow noreferrer" class="btn-outline-dark"><i class="ri-github-line"></i> GitHub</a>
         </div>
       </div>
@@ -1278,7 +1280,7 @@
       ],
       tags: ['Python', 'Selenium', 'API Integration', 'Data Quality', 'Automation'],
       videoUrl: '', // 如果未來有錄製專案運行的影片，可以填入網址
-      githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline',
+      githubUrl: 'https://github.com/lala850307-glitch/python-crawler-devops',
     },
     8: {
       title: '安全法規 ETL 自動化數據管線與分析',
@@ -1292,7 +1294,7 @@
       ],
       tags: ['Python', 'ETL', 'Data Engineering', 'Data Pipeline', 'Data Analysis'],
       videoUrl: '', // 如果未來有錄製專案運行的影片，可以填入網址
-      githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline/tree/main/Safety-Regs-ETL-Pipeline/analysis',
+      githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline',
     },
     9: {
       title: '零售數據自動化分析平台 (ELK 數據管線實作)',
@@ -1305,9 +1307,7 @@
         { label: '多維度 BI 儀表板', desc: '於 Kibana 設計地圖分析、月成長動態追蹤、店點毛利排行等 5 種以上視覺化圖表，提供多維度的商業洞察。' },
       ],
       tags: ['ELK Stack', 'GCP', 'Logstash', 'Elasticsearch', 'Kibana', 'Linux', 'ETL'],
-      videoUrl: '',
-      githubUrl: 'https://github.com/lala850307-glitch', // 建議建立一個 repo (例如 ELK-Retail-Pipeline) 放這段 conf
-    },
+     },
   };
 
   function openModal(id) {
@@ -1384,6 +1384,40 @@
   }
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── 數字滾動動畫 ──────────────────────────────────────────────────────────────
+  const statsConfig = [
+    { id: 'stat-0', end: 3.8, decimals: 1, suffix: '億+' },
+    { id: 'stat-1', end: 140, decimals: 0, suffix: '間'  },
+    { id: 'stat-2', end: 530, decimals: 0, suffix: '+'   },
+    { id: 'stat-3', end: 7,   decimals: 0, suffix: '年'  },
+  ];
+
+  function animateCounter(el, end, decimals, suffix) {
+    const duration = 600;
+    const startTime = performance.now();
+    function update(now) {
+      const p = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3); // easeOutCubic：快起快落，質感強
+      el.textContent = (end * ease).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  let statsAnimated = false;
+  const statsObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !statsAnimated) {
+      statsAnimated = true;
+      statsConfig.forEach(cfg => {
+        const el = document.getElementById(cfg.id);
+        if (el) animateCounter(el, cfg.end, cfg.decimals, cfg.suffix);
+      });
+    }
+  }, { threshold: 0.4 });
+
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) statsObserver.observe(statsSection);
 </script>
 </body>
 </html>

@@ -957,7 +957,55 @@
     <div class="proj-list">
       <div class="proj-list-inner" id="proj-list">
 
-        <!-- Project 1 -->
+        <!-- Project 1：AI 監考輔助系統（最新）-->
+        <div class="proj-card" data-cat="Machine Learning" onclick="openModal(11)">
+          <div class="proj-card-grid">
+            <div class="proj-card-media">
+              <!-- TODO: 替換成專案截圖或錄影網址 -->
+              <img src="" alt="AI 監考輔助系統" class="diagram-img" />
+              <div class="proj-metric">YOLO + Gemini</div>
+              <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
+            </div>
+            <div class="proj-card-info">
+              <div class="proj-meta"><span class="proj-cat">Machine Learning</span><span class="proj-dot">·</span><span class="proj-year">2026</span></div>
+              <h2 class="proj-title">AI 監考輔助系統 — 即時舞弊偵測平台</h2>
+              <p class="proj-desc">結合 YOLOv8 物件偵測、MediaPipe 姿態估計與 Gemini 2.5 Flash 視覺語言模型，即時偵測考場舞弊行為並自動上傳 AWS S3，提供 WebSocket 即時推送與人工審核工作流程。</p>
+              <div class="proj-highlights">
+                <div class="proj-highlight"><span class="proj-hl-badge">雙層 AI</span><p class="proj-hl-text">YOLOv8 物件偵測 + MediaPipe 姿態估計框選可疑考生</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">VLM</span><p class="proj-hl-text">Gemini 2.5 Flash 逐人獨立分析，輸出結構化 JSON 違規報告</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">雲端整合</span><p class="proj-hl-text">AWS S3 raw/reviewed 審核工作流程 + WebSocket 即時違規推送</p></div>
+              </div>
+              <div class="proj-tags"><span class="proj-tag">YOLOv8</span><span class="proj-tag">Gemini VLM</span><span class="proj-tag">FastAPI</span><span class="proj-tag">AWS S3</span><span class="proj-tag">WebSocket</span></div>
+              <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2：Mohuhu（最新）-->
+        <div class="proj-card" data-cat="Data Engineering" onclick="openModal(10)">
+          <div class="proj-card-grid" style="direction:rtl">
+            <div class="proj-card-media" style="direction:ltr">
+              <!-- TODO: 替換成專案截圖或錄影網址 -->
+              <img src="" alt="Mohuhu 智能搜尋平台" class="diagram-img" />
+              <div class="proj-metric">RAG 搜尋</div>
+              <div class="proj-hover-overlay"><div class="proj-hover-btn"><i class="ri-play-circle-line"></i> View Details</div></div>
+            </div>
+            <div class="proj-card-info" style="direction:ltr">
+              <div class="proj-meta"><span class="proj-cat">Data Engineering</span><span class="proj-dot">·</span><span class="proj-year">2025</span></div>
+              <h2 class="proj-title">Mohuhu — 台灣上市公司智能搜尋平台</h2>
+              <p class="proj-desc">整合 1,071 家台灣上市公司財報、股價、董監事資料，以 RAG 架構結合 LLM Embedding 與多策略模糊搜尋，支援錯字容忍、拼音查詢與產業篩選，可打包成企業地端離線執行檔。</p>
+              <div class="proj-highlights">
+                <div class="proj-highlight"><span class="proj-hl-badge">RAG</span><p class="proj-hl-text">Ollama bge-m3 向量化 + pgvector 語意相似度檢索</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">ETL</span><p class="proj-hl-text">OpenClaw 排程觸發，Google Gemini 自動生成公司別名</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">離線打包</span><p class="proj-hl-text">PyInstaller 打包成單一執行檔，企業地端無需安裝環境</p></div>
+              </div>
+              <div class="proj-tags"><span class="proj-tag">RAG</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">pgvector</span><span class="proj-tag">LightGBM</span></div>
+              <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
         <div class="proj-card" data-cat="Machine Learning" onclick="openExternal('https://tperealestate.franceslaw.tech/')">
           <div class="proj-card-grid">
             <div class="proj-card-media">
@@ -1318,6 +1366,34 @@
       tags: ['Python', 'ETL', 'Data Engineering', 'Data Pipeline', 'Data Analysis'],
       videoUrl: '', // 如果未來有錄製專案運行的影片，可以填入網址
       githubUrl: 'https://github.com/lala850307-glitch/Safety-Regs-ETL-Pipeline',
+    },
+    10: {
+      title: 'Mohuhu — 台灣上市公司智能搜尋平台',
+      category: 'Data Engineering', year: '2025',
+      metric: 'RAG 搜尋',
+      description: '整合 1,071 家台灣上市公司基本資料、財報、股價與董監事資訊，以 RAG 架構結合 Ollama bge-m3 LLM Embedding 與多策略模糊搜尋（精準比對、RapidFuzz、拼音容錯）。別名資料由 Google Gemini 自動生成，ETL 管線由外部 OpenClaw 排程伺服器定時觸發。支援打包成單一跨平台離線執行檔，企業地端部署無需安裝任何環境。',
+      highlights: [
+        { label: 'RAG 搜尋', desc: 'Ollama bge-m3 向量化查詢 + pgvector 語意相似度檢索，支援錯字容忍與拼音輸入' },
+        { label: 'AI ETL', desc: 'Google Gemini 自動生成公司別名，OpenClaw 外部排程伺服器定時觸發更新管線' },
+        { label: '離線打包', desc: 'PyInstaller + GitHub Actions CI 自動打包 Mac ARM/x86、Windows 三平台執行檔' },
+      ],
+      tags: ['RAG', 'LLM Embedding', 'FastAPI', 'React', 'pgvector', 'PyInstaller', 'ETL'],
+      videoUrl: '', // TODO: 填入錄影或截圖網址
+      githubUrl: 'https://github.com/lala850307-glitch/fin-intel-query-core',
+    },
+    11: {
+      title: 'AI 監考輔助系統 — 即時舞弊偵測平台',
+      category: 'Machine Learning', year: '2026',
+      metric: 'YOLO + Gemini',
+      description: '即時 AI 監控系統，結合 YOLOv8 物件偵測、MediaPipe 姿態估計與 Gemini 2.5 Flash 視覺語言模型，自動偵測考場舞弊行為。可疑截圖送至 Gemini 進行逐人獨立分析，輸出結構化 JSON 違規報告，並透過 WebSocket 即時推送至所有監考人員瀏覽器。整合 AWS S3 raw/reviewed 雙資料夾審核工作流程，支援 PTZ 攝影機雲台控制與 LINE/Discord 違規推播。',
+      highlights: [
+        { label: '雙層 AI 偵測', desc: 'YOLOv8 物件偵測 + MediaPipe 姿態估計，持續警告 1.5 秒後自動截圖觸發分析' },
+        { label: 'Gemini VLM', desc: 'Gemini 2.5 Flash 逐人獨立分析截圖，輸出結構化 JSON 含行為類別、嚴重程度與信心值' },
+        { label: '雲端工作流程', desc: 'AWS S3 raw→reviewed 人工審核流程 + WebSocket 即時推送 + LINE/Discord 通知' },
+      ],
+      tags: ['YOLOv8', 'MediaPipe', 'Gemini VLM', 'FastAPI', 'AWS S3', 'WebSocket', 'RTSP'],
+      videoUrl: '', // TODO: 填入錄影或截圖網址
+      githubUrl: 'https://github.com/jarviskao9201/Invigilation-Support-System',
     },
     9: {
       title: '零售數據自動化分析平台 (ELK 數據管線實作)',

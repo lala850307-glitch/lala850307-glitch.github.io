@@ -997,9 +997,9 @@
               <div class="proj-highlights">
                 <div class="proj-highlight"><span class="proj-hl-badge">RAG</span><p class="proj-hl-text">Ollama bge-m3 向量化 + pgvector 語意相似度檢索</p></div>
                 <div class="proj-highlight"><span class="proj-hl-badge">ETL</span><p class="proj-hl-text">OpenClaw 排程觸發，Google Gemini 自動生成公司別名</p></div>
-                <div class="proj-highlight"><span class="proj-hl-badge">離線打包</span><p class="proj-hl-text">PyInstaller 打包成單一執行檔，企業地端無需安裝環境</p></div>
+                <div class="proj-highlight"><span class="proj-hl-badge">離線打包</span><p class="proj-hl-text">Pywebview 打包成單一執行檔，企業地端無需安裝環境</p></div>
               </div>
-              <div class="proj-tags"><span class="proj-tag">RAG</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">pgvector</span><span class="proj-tag">LightGBM</span></div>
+              <div class="proj-tags"><span class="proj-tag">RAG</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">pgvector</span><span class="proj-tag">Embedding</span></div>
               <div class="proj-cta-text"><span>Click to view details</span><span>→</span></div>
             </div>
           </div>
@@ -1369,13 +1369,13 @@
     },
     10: {
       title: 'Mohuhu — 台灣上市公司智能搜尋平台',
-      category: 'Data Engineering', year: '2025',
+      category: 'Data Engineering', year: '2026',
       metric: 'RAG 搜尋',
       description: '整合 1,071 家台灣上市公司基本資料、財報、股價與董監事資訊，以 RAG 架構結合 Ollama bge-m3 LLM Embedding 與多策略模糊搜尋（精準比對、RapidFuzz、拼音容錯）。別名資料由 Google Gemini 自動生成，ETL 管線由外部 OpenClaw 排程伺服器定時觸發。支援打包成單一跨平台離線執行檔，企業地端部署無需安裝任何環境。',
       highlights: [
         { label: 'RAG 搜尋', desc: 'Ollama bge-m3 向量化查詢 + pgvector 語意相似度檢索，支援錯字容忍與拼音輸入' },
         { label: 'AI ETL', desc: 'Google Gemini 自動生成公司別名，OpenClaw 外部排程伺服器定時觸發更新管線' },
-        { label: '離線打包', desc: 'PyInstaller + GitHub Actions CI 自動打包 Mac ARM/x86、Windows 三平台執行檔' },
+        { label: '離線打包', desc: 'Pywebview + GitHub Actions CI 自動打包 Mac ARM/x86、Windows 三平台執行檔' },
       ],
       tags: ['RAG', 'LLM Embedding', 'FastAPI', 'React', 'pgvector', 'PyInstaller', 'ETL'],
       videoUrl: '', // TODO: 填入錄影或截圖網址
@@ -1397,7 +1397,7 @@
     },
     9: {
       title: '零售數據自動化分析平台 (ELK 數據管線實作)',
-      category: 'Data Engineering', year: '2025',
+      category: 'Data Engineering', year: '2026',
       metric: 'ELK Pipeline',
       description: '建構一套完整的 ELK (Elasticsearch, Logstash, Kibana) 數據管線，自動化處理零售 CSV 數據。此專案在 GCP Linux 環境中部署 Logstash 腳本，實現了從原始數據擷取、透過複雜的 ETL 轉換（利用 mutate/gsub 清理中文字元、重組時間字串並強制轉型），到最終無縫載入 Elasticsearch，並在 Kibana 上建構多維度商業智能儀表板的端到端自動化流程。',
       highlights: [
